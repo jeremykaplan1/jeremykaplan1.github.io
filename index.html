@@ -6,5 +6,7 @@ Hello World!!!
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
     const code = urlParams.get('code')
-    console.log(code);
+    if(code){
+        console.log(code);
+    }
 </script>
