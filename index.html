@@ -2,4 +2,9 @@ Hello World!!!
 
 <script type='text/javascript'>
     console.log('here ',  window.location.search);
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    const code = urlParams.get('code')
+    console.log(code);
 </script>
