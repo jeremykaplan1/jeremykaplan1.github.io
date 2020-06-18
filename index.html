@@ -1,12 +1,10 @@
 Hello World!!!
 
 <script type='text/javascript'>
-    console.log('here ',  window.location.search);
     const queryString = window.location.search;
-    console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
     const code = urlParams.get('code')
     if(code){
-        console.log(code);
+        window.location.href = `http://ii-editor.site.docker/ii/integrations/instagram/?code=${code}`;
     }
 </script>
