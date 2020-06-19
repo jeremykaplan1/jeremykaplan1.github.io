@@ -5,7 +5,7 @@ Hello World!!!
     const urlParams = new URLSearchParams(queryString);
     const code = urlParams.get('code')
     if(code){
-        window.opener.postMessage('code', code);
+        window.opener.postMessage({code}, '*');
         window.close();
     }
 </script>
