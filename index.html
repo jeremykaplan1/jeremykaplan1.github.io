@@ -3,9 +3,10 @@ Hello World!!!
 <script type='text/javascript'>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const code = urlParams.get('code')
+    const code = urlParams.get('code');
+    const redirectUrl = urlParams.get('redirectUrl');
+    console.log(`D-BUG: redirectUrl`, redirectUrl);
     if(code){
-        const redirectUrl = urlParams.get('redirectUrl')
         window.location.href = `${redirectUrl}?code=${code}`;
     }
 </script>
