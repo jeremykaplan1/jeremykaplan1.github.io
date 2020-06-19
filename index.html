@@ -5,7 +5,6 @@ Hello World!!!
     const urlParams = new URLSearchParams(queryString);
     const code = urlParams.get('code')
     if(code){
-        const redirectUrl = urlParams.get('redirectUrl')
-        window.location.href = `http://ii-editor.site.docker/ii/design?code=${code}`;
+        window.close();
     }
 </script>
