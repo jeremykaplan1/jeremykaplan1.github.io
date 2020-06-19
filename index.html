@@ -3,10 +3,9 @@ Hello World!!!
 <script type='text/javascript'>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const code = urlParams.get('code');
-    const redirectUrl = urlParams.get('redirectUrl');
-    console.log(`D-BUG: redirectUrl`, redirectUrl);
+    const code = urlParams.get('code')
     if(code){
-        window.location.href = `${redirectUrl}?code=${code}`;
+        const redirectUrl = urlParams.get('redirectUrl')
+        window.location.href = `http://ii-editor.site.docker/ii/design?code=${code}`;
     }
 </script>
