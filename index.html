@@ -18,9 +18,9 @@ Hello World!!!
     } else {
         if(state && code){
             // window.open('about:blank');
-            $jsonArrayResponse = json_decode($state, true);
-            console.log(jsonArrayResponse['id']);
-            console.log( jsonArrayResponse['apiUrl']);
+            const state = JSON.parse($state);
+            console.log(state['id']);
+            console.log( state['apiUrl']);
             // window.location.href = `${Base64DecodeUrl(state)}?code=${code}`;
             // window.close();
         }
