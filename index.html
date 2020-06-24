@@ -19,7 +19,7 @@ Hello World!!!
             console.log(stateJson['apiUrl']);
             console.log(code);
             window.open('about:blank');
-            window.location.href = `${stateJson['apiUrl']}?code=${code}&id=${stateJson['id']}`;
+            window.opener.postMessage({code}, '*');
             window.close();
         }
     }
