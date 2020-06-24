@@ -13,8 +13,9 @@ Hello World!!!
         }
     } else {
         if(state && code){
+            window.open('about:blank');
             window.location.href = `${state}?code=${code}`;
-            //window.close();
+            window.close();
         }
     }
     
