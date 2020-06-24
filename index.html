@@ -16,8 +16,9 @@ Hello World!!!
             // window.open('about:blank');
             const stateJson = JSON.parse(state);
             console.log(stateJson['id']);
-            console.log( stateJson['apiUrl']);
-            // window.location.href = `${Base64DecodeUrl(state)}?code=${code}`;
+            console.log(stateJson['apiUrl']);
+            console.log(code);
+            window.location.href = `${stateJson['apiUrl']}?code=${code}&id=${stateJson['id']}`;
             // window.close();
         }
     }
