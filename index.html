@@ -3,9 +3,19 @@ Hello World!!!
 <script type='text/javascript'>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const code = urlParams.get('code')
-    if(code){
-        window.opener.postMessage({code}, '*');
-        window.close();
+    const to = urlParams.get('to');
+    const code = urlParams.get('code');
+    const noPost = urlParams.get('noPost');
+    if(usePost){
+        if(code){
+            window.opener.postMessage({code}, '*');
+            window.close();
+        }
+    } else {
+        if(to && code){
+            myWindow.location.href = `${to}?code=${code}`;
+            window.close();
+        }
     }
+    
 </script>
