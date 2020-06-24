@@ -3,24 +3,19 @@ Hello World!!!
 <script type='text/javascript'>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const to = urlParams.get('to');
-    console.log(`D-BUG: window.location.search`, window.location.search);
-    console.log(`D-BUG: urlParams`, urlParams);
-    console.log(`D-BUG: to`, to);
+    const state = urlParams.get('state');
     const code = urlParams.get('code');
-    console.log(`D-BUG: code`, code);
     const usePost = urlParams.get('usePost');
-    console.log(`D-BUG: usePost`, usePost);
     if(usePost){
         if(code){
             window.opener.postMessage({code}, '*');
             window.close();
         }
     } else {
-        // if(to && code){
-        //     window.location.href = `${to}?code=${code}`;
-        //     window.close();
-        // }
+        if(state && code){
+            window.location.href = `${state}?code=${code}`;
+            //window.close();
+        }
     }
     
 </script>
