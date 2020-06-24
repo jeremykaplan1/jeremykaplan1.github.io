@@ -1,6 +1,10 @@
 Hello World!!!
 
 <script type='text/javascript'>
+    function Base64DecodeUrl(str){
+        str = (str + '===').slice(0, str.length + (str.length % 4));
+        return str.replace(/-/g, '+').replace(/_/g, '/');
+    }
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const state = urlParams.get('state');
@@ -14,7 +18,7 @@ Hello World!!!
     } else {
         if(state && code){
             window.open('about:blank');
-            window.location.href = `${state}?code=${code}`;
+            window.location.href = `${Base64DecodeUrl(state)}?code=${code}`;
             window.close();
         }
     }
