@@ -6,6 +6,7 @@ Hello World!!!
     const code = urlParams.get('code');
     if(code){
         window.opener.postMessage({code}, '*');
-        window.close();
+        console.log(code);
+        // window.close();
     }
 </script>
