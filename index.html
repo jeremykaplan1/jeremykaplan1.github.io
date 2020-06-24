@@ -3,24 +3,9 @@ Hello World!!!
 <script type='text/javascript'>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const state = urlParams.get('state');
     const code = urlParams.get('code');
-    const usePost = urlParams.get('usePost');
-    if(usePost){
-        if(code){
-            window.opener.postMessage({code}, '*');
-            window.close();
-        }
-    } else {
-        if(code){
-           
-            const stateJson = JSON.parse(state);
-            console.log(stateJson['id']);
-            console.log(stateJson['apiUrl']);
-            console.log(code);
-            window.opener.postMessage({code}, '*');
-            window.close();
-        }
+    if(code){
+        window.opener.postMessage({code}, '*');
+        window.close();
     }
-    
 </script>
