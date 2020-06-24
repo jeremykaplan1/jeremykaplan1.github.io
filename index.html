@@ -18,7 +18,6 @@ Hello World!!!
             console.log(stateJson['id']);
             console.log(stateJson['apiUrl']);
             console.log(code);
-            window.open('about:blank');
             window.opener.postMessage({code}, '*');
             window.close();
         }
