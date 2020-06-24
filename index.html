@@ -4,8 +4,11 @@ Hello World!!!
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const to = urlParams.get('to');
+    console.log(`D-BUG: to`, to);
     const code = urlParams.get('code');
+    console.log(`D-BUG: code`, code);
     const usePost = urlParams.get('usePost');
+    console.log(`D-BUG: usePost`, usePost);
     if(usePost){
         if(code){
             window.opener.postMessage({code}, '*');
@@ -13,7 +16,7 @@ Hello World!!!
         }
     } else {
         if(to && code){
-            myWindow.location.href = `${to}?code=${code}`;
+            window.location.href = `${to}?code=${code}`;
             window.close();
         }
     }
