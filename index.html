@@ -3,9 +3,13 @@ Hello World!!!
 <script type='text/javascript'>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const code = urlParams.get('code')
+    const code = urlParams.get('code');
+    const error_reason = urlParams.get('error_reason');
     if(code){
         window.opener.postMessage({code}, '*');
+        window.close();
+    }else if(error_reason){
+        window.opener.postMessage({error_reason}, '*');
         window.close();
     }
 </script>
